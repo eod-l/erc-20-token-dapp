@@ -54,7 +54,7 @@ After deployment, copy the printed contract address.
 
 Create frontend/.env and set:
 
-VITE_TOKEN_ADDRESS=your_deployed_contract_address
+VITE_TOKEN_ADDRESS=0xad1eA156f97EFfE05542669bbAD3298C223A8EfD
 VITE_CHAIN_ID=11155111
 VITE_NETWORK_NAME=Sepolia
 
