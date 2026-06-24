@@ -1,89 +1,119 @@
-# ERC-20 Token DApp
+ERC-20 Token DApp
 
-A beginner-friendly ERC-20 token project with:
-- a Solidity smart contract
-- a Hardhat deployment setup
-- a React frontend that connects to MetaMask
-- ERC-20 token transfer support on a public testnet
+A beginner-friendly full-stack ERC-20 token project built with Solidity, Hardhat, React, and MetaMask. The project includes a smart contract deployed to the Sepolia public testnet and a frontend that allows users to connect their wallet and transfer tokens.
+Features
 
-## Project structure
+    ERC-20 token smart contract written in Solidity
+    OpenZeppelin-based implementation
+    Hardhat setup for compile, test, and deployment
+    React frontend built with Vite
+    MetaMask wallet connection
+    displays connected wallet address
+    displays selected network
+    transfer tokens to another wallet
+    deployed to Sepolia public testnet
+    successful end-to-end token transfer test completed
 
-- `contracts/` - smart contracts
-- `scripts/` - deployment scripts
-- `frontend/` - React app
+Project Structure
 
-## Quick start
+    contracts/ - smart contracts
+    scripts/ - deployment scripts
+    test/ - Hardhat tests
+    frontend/ - React frontend
 
-### 1. Install dependencies
+Quick Start
+1. Install dependencies
 
-```bash
 npm install
 cd frontend && npm install
-```
 
-### 2. Create environment file
+2. Create environment file
 
-Create a `.env` file in the project root:
+Create a .env file in the project root:
 
-```bash
 SEPOLIA_RPC_URL=your_rpc_url_here
-PRIVATE_KEY=your_wallet_private_key_here
-ETHERSCAN_API_KEY=your_etherscan_api_key_here
-```
+BASE_SEPOLIA_RPC_URL=
+PRIVATE_KEY=your_test_wallet_private_key_here
+ETHERSCAN_API_KEY=
+BASESCAN_API_KEY=
 
-If you use Base Sepolia instead, replace the RPC URL with a Base Sepolia RPC endpoint.
+3. Compile the contract
 
-### 3. Compile the contract
-
-```bash
 npm run compile
-```
 
-### 4. Deploy the contract
+4. Run tests
 
-```bash
+npm test
+
+5. Deploy the contract
+
 npm run deploy:sepolia
-```
 
 After deployment, copy the printed contract address.
+6. Configure the frontend
 
-### 5. Configure the frontend
+Create frontend/.env and set:
 
-In `frontend/.env`, set:
-
-```bash
 VITE_TOKEN_ADDRESS=your_deployed_contract_address
 VITE_CHAIN_ID=11155111
 VITE_NETWORK_NAME=Sepolia
-```
 
-For Base Sepolia, use chain id `84532`.
+7. Run the frontend
 
-### 6. Run the frontend
-
-```bash
 cd frontend
 npm run dev
-```
 
-## What works right now
+How to Use
 
-- ERC-20 token contract using OpenZeppelin
-- deploy script for testnets
-- MetaMask wallet connection
-- shows connected address
-- shows selected network
-- token transfer form
+    Open the frontend in the browser
+    Connect MetaMask
+    Switch MetaMask to the Sepolia network
+    Enter a recipient wallet address
+    Enter a token amount
+    Confirm the transfer in MetaMask
 
-## What still needs real deployment setup
+Current Project Status
 
-- adding your own RPC URL and private key
-- deploying to a public testnet
-- copying deployed contract address into the frontend
-- deploying the frontend to Vercel or Netlify
+The following parts are completed:
 
-## Token details
+    ERC-20 token contract created
+    contract compiled successfully
+    local Hardhat test passed
+    deployer wallet funded with Sepolia ETH
+    contract deployed to Sepolia
+    frontend connected to deployed contract
+    MetaMask integration working
+    token transfer tested successfully between wallets
 
-Default token name: `Beginner Token`
-Default token symbol: `BGT`
-Initial supply: `1000000` tokens minted to deployer
+Token Details
+
+    Token name: Beginner Token
+    Token symbol: BGT
+    Initial supply: 1000000 tokens minted to deployer
+
+Deployment Details
+
+    Network: Sepolia
+    Chain ID: 11155111
+    Contract Address: PASTE_YOUR_DEPLOYED_CONTRACT_ADDRESS_HERE
+
+Optional Frontend Deployment
+
+If deploying the frontend publicly, you can use Vercel or Netlify and then add the live URL here.
+
+    Frontend URL: Local development only
+
+Security Notes
+
+    use a test wallet only
+    never commit private keys to the repository
+    keep .env files out of version control
+
+Future Improvements
+
+    display token balance in the frontend
+    show transaction status messages
+    add explorer links for transactions
+    improve UI styling
+    deploy frontend publicly
+
